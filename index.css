@@ -42,20 +42,23 @@ header {
 }
 
 body {
-    background-color: blueviolet;
     color: white;
     font-size: 16px;
+    overflow: hidden;
 }
 
 header {
     position: fixed;
+    top: 0;
+    width: 80vw;
     left: 50%;
     transform: translatex(-50%);
     display: grid;
     align-items: center;
     grid-template-columns: 1fr 600px;
     gap: 10%;
-
+    z-index: 1000;
+/*
     & img {
         width: 250px;
     }
@@ -65,9 +68,19 @@ header {
             display: grid;
             grid-template-columns: repeat(3, 200px);
         }
-    }
+    } */
 }
 
+header img {
+    width: 250px;
+}
+
+header nav ul {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+}
+
+/*
 div.item {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -75,13 +88,13 @@ div.item {
     
 }
 
-button#saiba-mais {
+button.information {
     background-color: greenyellow;
     padding: 10px 20px;
     border-radius: 15px;
 }
 
-button#saiba-mais:hover {
+button.information:hover {
     background-color: white;
 }
 
@@ -89,4 +102,116 @@ button img {
     width: 20px;
     height: 20px;
 }
+*/
 
+section {
+    background-image: radial-gradient(#7f3d9e, #6d00d9);
+    height: 100vh;
+    position: relative;
+}
+
+section .list {
+    width: 70vw;
+    margin: auto;
+    height: 100%;
+    position: relative;
+}
+
+section .list .item {
+    position: absolute;
+    inset: 0; /*define o valor pora todas as direções*/
+}
+
+.item .car-img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+}
+
+.car-img img {
+    width: 100%;
+    transform: rotate(-25deg);
+}
+
+.content {
+    position: absolute;
+    right: 100px;
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+    gap: 20px;
+}
+
+.content .car-information {
+    font-weight: bold;
+}
+
+.content h2 {
+    font-size: 8em;
+    line-height: 1em;
+}
+
+.content .description {
+    color: #d0d0d0;
+    font-size: 12px;
+    text-align: right;
+    max-width: 400px;
+}
+
+button.information {
+    border-radius: 300px;
+    height: 35px;
+    width: 120px;
+    text-transform: uppercase;
+    border: 2px solid #792fd3;
+    background-color: #beff1b;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button.information:hover {
+    background-color: white;
+}
+
+.arrows button img {
+    width: 100px;
+}
+
+.indicators {
+   /* position: absolute; */
+    top: 50%;
+    left: 50%;
+    height: 200px;
+    width: 90vw;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.indicators .number {
+    font-size: 5em;
+}
+
+.number ul {
+    display: flex;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.number ul li {
+    width: 30%;
+    height: 50px;
+    background-color: #beff1b;
+}
